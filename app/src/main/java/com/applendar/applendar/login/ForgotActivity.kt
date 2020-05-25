@@ -31,6 +31,8 @@ class ForgotActivity : AppCompatActivity() {
     }
 
     fun send(view: View){
+        startActivity(Intent(this, LoginActivity::class.java))      //borrar
+
 //        val email = etMail.text.toString()
 //
 //        if(!TextUtils.isEmpty(email)){
@@ -39,7 +41,7 @@ class ForgotActivity : AppCompatActivity() {
 //                        task ->
 //                        if(task.isSuccessful) {
 //                            progressBar.visibility = View.VISIBLE
-                            startActivity(Intent(this, LoginActivity::class.java))
+//                            startActivity(Intent(this, LoginActivity::class.java))
 //                        }else
 //                            Toast.makeText(this,"Error al enviar el email",Toast.LENGTH_LONG)
 //                    }

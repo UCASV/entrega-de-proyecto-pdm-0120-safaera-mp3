@@ -50,7 +50,9 @@ class RegisterActivity : AppCompatActivity() {
 
      fun register(view: View){
         createNewAccount()
-    }
+         action()                   //borrar
+
+     }
 
     private fun createNewAccount(){
         val name: String = etName.text.toString()
