@@ -7,4 +7,9 @@
     <color name="youWinDark">#35A571</color>
     <color name="youWinBackground">#B7F8C9</color>
     <color name="gameOverBackground">#D7D0CB</color>
+
+    <color name="light_font">#9C27B0</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="text_shadow">#F3E999FF</color>
+    <color name="text_shadow_white">#FFFFFF</color>
 </resources>
