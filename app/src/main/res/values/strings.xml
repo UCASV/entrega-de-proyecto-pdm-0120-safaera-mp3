@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Owl Trivia</string>
+    <string name="app_name">AppLendar</string>
     <string name="start_to_play">Start to Play</string>
 
     <string name="about_text">Owl Trivia will help remind you of important data of owls.\n\nConsider modifying the questions and graphics to make this game your own!</string>
