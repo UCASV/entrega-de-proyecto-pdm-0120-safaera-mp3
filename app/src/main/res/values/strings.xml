@@ -15,5 +15,6 @@
     <string name="rules">Rules</string>
     <string name="share_success_text">I win the OWL Trivia with %1$d / %2$d</string>
     <string name="share">Share</string>
+    <string name="navdrawer_actividades">Actividades</string>
 
 </resources>
