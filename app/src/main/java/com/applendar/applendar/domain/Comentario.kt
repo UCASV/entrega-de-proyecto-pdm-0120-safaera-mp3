@@ -7,18 +7,18 @@ class Comentario {
 
     @SerializedName("idComentario")
     @Expose
-    val idComentario: Int?=null
+    var idComentario: Int?=null
 
     @SerializedName("comentario")
     @Expose
-    val comentario: Usuario?=null
+    var comentario: Usuario?=null
 
     @SerializedName("fechaCreacion")
     @Expose
-    val fechaCreacion: Usuario?=null
+    var fechaCreacion: Usuario?=null
 
     @SerializedName("autor")
     @Expose
-    val autor: Usuario?=null
+    var autor: Usuario?=null
 
 }

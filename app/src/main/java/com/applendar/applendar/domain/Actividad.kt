@@ -7,33 +7,33 @@ class Actividad {
 
     @SerializedName("idActividad")
     @Expose
-    val idActividad: Int?=null
+    var idActividad: Int?=null
 
     @SerializedName("nombre")
     @Expose
-    val nombre: String?=null
+    var nombre: String?=null
 
     @SerializedName("tipoDeActividad")
     @Expose
-    val tipoDeActividad: String?=null
+    var tipoDeActividad: String?=null
 
     @SerializedName("lugar")
     @Expose
-    val lugar: String?=null
+    var lugar: String?=null
 
     @SerializedName("fechaDeActividad")
     @Expose
-    val fechaDeActividad: String?=null
+    var fechaDeActividad: String?=null
 
     @SerializedName("detalles")
     @Expose
-    val detalles: Usuario?=null
+    var detalles: Usuario?=null
 
     @SerializedName("autor")
     @Expose
-    val autor: Usuario?=null
+    var autor: Usuario?=null
 
     @SerializedName("comentarios")
     @Expose
-    val comentarios: List<Comentario>?=null
+    var comentarios: List<Comentario>?=null
 }
