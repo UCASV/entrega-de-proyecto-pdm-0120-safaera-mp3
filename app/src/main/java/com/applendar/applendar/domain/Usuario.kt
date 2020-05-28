@@ -7,16 +7,15 @@ class Usuario {
 
     @SerializedName("idUsuario")
     @Expose
-    val idUsuario :Int?=null
+    var idUsuario :Int?=null
 
     @SerializedName("usuario")
     @Expose
-    val usuario :String?=null
+    var usuario :String?=null
 
     @SerializedName("puntaje")
     @Expose
-    val puntaje :Int?=null
-
+    var puntaje :Int?=null
 
 
 
