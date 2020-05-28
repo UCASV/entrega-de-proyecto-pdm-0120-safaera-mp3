@@ -12,17 +12,18 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MateriaActivity"></activity>
         <activity android:name=".ListadoMateriasActivity">
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.ForgotActivity" />
+        <activity android:name=".login.RegisterActivity" />
+        <activity android:name=".login.Presentation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login.ForgotActivity" />
-        <activity android:name=".login.RegisterActivity" />
-        <activity android:name=".login.Presentation"></activity>
     </application>
 
 </manifest>
