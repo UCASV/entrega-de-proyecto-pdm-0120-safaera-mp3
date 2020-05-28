@@ -1,22 +1,32 @@
 package com.applendar.applendar
 
+import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.AdapterView
+import android.widget.EditText
 import android.widget.ListView
+import android.widget.SearchView
+import androidx.core.content.ContextCompat
+import androidx.core.view.MenuItemCompat
 import com.applendar.applendar.adapters.MateriasAdapter
 import com.applendar.applendar.domain.Materia
 
 class ListadoMateriasActivity : AppCompatActivity() {
 
     lateinit var materiaslv: ListView;
+    lateinit var searchView: SearchView;
+    lateinit var materias: ArrayList<Materia>;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listado_materias)
 
-        var materias : ArrayList<Materia> = ArrayList();
         var materia: Materia = Materia();
         materia.nombre = "Programación de Disp. Mov.";
         materia.acronimo = "PDM";
@@ -76,6 +86,61 @@ class ListadoMateriasActivity : AppCompatActivity() {
             intent.putExtra("materia_catedratico", materia.catedratico)
             intent.putExtra("materias_descripcion", materia.descripcion)
             startActivity(intent)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.searchbar_menu, menu)
+        val searchItem: MenuItem? = menu?.findItem(R.id.action_buscar)
+        if (searchItem != null) {
+            searchView = MenuItemCompat.getActionView(searchItem) as SearchView
+            searchView.setOnCloseListener(object : SearchView.OnCloseListener {
+                override fun onClose(): Boolean {
+                    return true
+                }
+            })
+
+            val searchPlate = searchView.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
+            searchPlate.hint = "Search"
+            val searchPlateView: View =
+                searchView.findViewById(androidx.appcompat.R.id.search_plate)
+            searchPlateView.setBackgroundColor(
+                ContextCompat.getColor(
+                    this,
+                    android.R.color.transparent
+                )
+            )
+
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    if(query!= null) {
+                        for (materia: Materia in materias) {
+
+                        }
+                    }
+
+// do your logic here                Toast.makeText(applicationContext, query, Toast.LENGTH_SHORT).show()
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    return false
+                }
+            })
+
+            val searchManager =
+                getSystemService(Context.SEARCH_SERVICE) as SearchManager
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+
+
+    override fun onBackPressed() {
+        if (!searchView.isIconified()) {
+            searchView.onActionViewCollapsed();
+        } else {
+            super.onBackPressed();
         }
     }
 }
