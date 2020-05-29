@@ -7,7 +7,7 @@
         android:icon="@drawable/owl_rules"
         android:title="@string/rules" />
     <item
-        android:id="@+id/ActividadesFragment"
+        android:id="@+id/calendarFragment"
         android:icon="@mipmap/applendar_icon"
         android:title="@string/navdrawer_actividades" />
     <item
