@@ -5,7 +5,7 @@
     <item
         android:id="@+id/rulesFragment"
         android:icon="@drawable/owl_rules"
-        android:title="@string/rules" />
+        android:title="Perfil" />
     <item
         android:id="@+id/calendarFragment"
         android:icon="@mipmap/applendar_icon"
@@ -13,5 +13,5 @@
     <item
         android:id="@+id/aboutFragment"
         android:icon="@drawable/owl_about"
-        android:title="@string/About" />
+        android:title="Materias" />
 </menu>

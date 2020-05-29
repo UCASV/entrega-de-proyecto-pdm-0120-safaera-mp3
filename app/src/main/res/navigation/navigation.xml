@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.applendar.applendar.TitleFragment"
-        android:label="TitleFragment"
+        android:label="Calendario Universitario"
         tools:layout="@layout/fragment_title">
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
@@ -62,16 +62,16 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.applendar.applendar.AboutFragment"
-        android:label="fragment_about"
+        android:label="Materias"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.applendar.applendar.RulesFragment"
-        android:label="fragment_rules"
+        android:label="Perfil Estudiante"
         tools:layout="@layout/fragment_rules" />
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.applendar.applendar.activities.CalendarFragment"
-        android:label="fragment_calendar"
+        android:label="Actividades del Mes"
         tools:layout="@layout/fragment_calendar" />
 </navigation>
