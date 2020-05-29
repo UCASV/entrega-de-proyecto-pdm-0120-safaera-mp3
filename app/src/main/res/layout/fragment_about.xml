@@ -16,12 +16,13 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/image_header_height"
             android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginTop="224dp"
             android:layout_marginEnd="@dimen/margin_wide"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/owl_about" />
+            app:srcCompat="@drawable/ic_working_flow" />
 
         <TextView
             android:id="@+id/rulesText"
@@ -30,7 +31,7 @@
             android:layout_marginStart="@dimen/margin_wide"
             android:layout_marginTop="@dimen/margin_wide"
             android:layout_marginEnd="@dimen/margin_wide"
-            android:text="@string/about_text"
+            android:text="Materias Coming soon"
             style="@style/TextAppearance.MdcTypographyStyles.Headline4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
