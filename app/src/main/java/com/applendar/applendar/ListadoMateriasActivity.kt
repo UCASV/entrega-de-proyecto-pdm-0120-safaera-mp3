@@ -11,7 +11,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.ListView
-import android.widget.SearchView
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.view.MenuItemCompat
 import com.applendar.applendar.adapters.MateriasAdapter
@@ -22,11 +23,13 @@ class ListadoMateriasActivity : AppCompatActivity() {
     lateinit var materiaslv: ListView;
     lateinit var searchView: SearchView;
     lateinit var materias: ArrayList<Materia>;
+    lateinit var materiasPerma: ArrayList<Materia>;
+    lateinit var adapter: MateriasAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listado_materias)
-
+        materias = ArrayList<Materia>()
         var materia: Materia = Materia();
         materia.nombre = "Programación de Disp. Mov.";
         materia.acronimo = "PDM";
@@ -70,12 +73,14 @@ class ListadoMateriasActivity : AppCompatActivity() {
         materia6.acronimo = "MAT2";
         materia6.siguienteFechaEva = "07/06/20"
         materia.catedratico = "Ing. Enrique Arguello";
-        materia.descripcion = "La materia de matemáticas 2 ve temas como las integrales así como solidos de revolución"
+        materia.descripcion = "La materia de matemáticas 2 ve temas como las integrales y solidos de revolución"
         materias.add(materia6);
 
         materiaslv = findViewById(R.id.activity_listado_materias_listview);
-        val adapter: MateriasAdapter = MateriasAdapter(this, materias);
+        adapter = MateriasAdapter(this, materias);
         materiaslv.adapter = adapter;
+        materiasPerma = ArrayList<Materia>()
+        materiasPerma.addAll(materias)
 
         materiaslv.setOnItemClickListener { parent, view, position, id ->
             var materia: Materia = adapter.getItem(position) as Materia
@@ -113,17 +118,46 @@ class ListadoMateriasActivity : AppCompatActivity() {
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
-                    if(query!= null) {
-                        for (materia: Materia in materias) {
-
+                    var materiaSublist = ArrayList<Materia>()
+                    if(query!= null ) {
+                        if( query != "") {
+                            for (materia: Materia in materiasPerma) {
+                                if (materia.acronimo?.toLowerCase()?.contains(query.toLowerCase())!!
+                                    || materia.nombre?.toLowerCase()
+                                        ?.contains(query.toLowerCase())!!
+                                ) {
+                                    materiaSublist.add(materia)
+                                }
+                            }
+                        }
+                        else{
+                            materiaSublist = materiasPerma
                         }
                     }
-
-// do your logic here                Toast.makeText(applicationContext, query, Toast.LENGTH_SHORT).show()
+                    else{
+                        materiaSublist = materiasPerma
+                    }
+                    materias.clear()
+                    materias.addAll(materiaSublist)
+                    adapter.notifyDataSetChanged()
                     return false
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
+                    var materiaSublist = ArrayList<Materia>()
+                    if(newText==null){
+                        materiaSublist = materiasPerma
+                        materias.clear()
+                        materias.addAll(materiaSublist)
+                        adapter.notifyDataSetChanged()
+                    }
+                    else if(newText==""){
+                        materiaSublist = materiasPerma
+                        materias.clear()
+                        materias.addAll(materiaSublist)
+                        adapter.notifyDataSetChanged()
+                    }
+
                     return false
                 }
             })
