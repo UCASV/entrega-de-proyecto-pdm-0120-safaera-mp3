@@ -9,7 +9,7 @@
     <item
         android:id="@+id/calendarFragment"
         android:icon="@mipmap/applendar_icon"
-        android:title="@string/actividades" />
+        android:title="Actividades" />
     <item
         android:id="@+id/aboutFragment"
         android:icon="@drawable/owl_about"
