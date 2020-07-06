@@ -6,7 +6,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
+import com.applendar.applendar.adapters.Activity
+import com.applendar.applendar.adapters.AgendaAdapter
 import com.applendar.applendar.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.fragment_calendar.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupWithNavController(binding.navView, navController)
         NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
