@@ -7,17 +7,25 @@ class Materia {
 
     @SerializedName("idMateria")
     @Expose
-    val idMateria: Int?=null
+    var idMateria: Int?=null
 
     @SerializedName("nombre")
     @Expose
-    val nombre: String?=null
+    var nombre: String?=null
 
     @SerializedName("nombre")
     @Expose
-    val descripcion: String?=null
+    var descripcion: String?=null
 
     @SerializedName("catedratico")
     @Expose
-    val catedratico: String?=null
+    var catedratico: String?=null
+
+    @SerializedName("acronimo")
+    @Expose
+    var acronimo: String?=null
+
+    @SerializedName("siguienteFecha")
+    @Expose
+    var siguienteFechaEva: String?=null
 }
