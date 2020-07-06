@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.applendar.applendar.databinding.FragmentTitleBinding
+import com.applendar.applendar.databinding.FragmentPresentationBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -17,14 +17,8 @@ class PresentationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentTitleBinding>(inflater,
-            R.layout.fragment_title, container, false)
-
-//        binding.playButton.setOnClickListener { view: View ->
-//           // view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
-//            view.findNavController()
-//                .navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
-//        }
+        val binding = DataBindingUtil.inflate<FragmentPresentationBinding>(inflater,
+            R.layout.fragment_presentation, container, false)
 
         setHasOptionsMenu(true)
         return binding.root

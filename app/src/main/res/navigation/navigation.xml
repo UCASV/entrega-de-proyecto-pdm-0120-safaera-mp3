@@ -9,7 +9,7 @@
         android:id="@+id/titleFragment"
         android:name="com.applendar.applendar.PresentationFragment"
         android:label="Calendario Universitario"
-        tools:layout="@layout/fragment_title"/>
+        tools:layout="@layout/fragment_presentation"/>
 
     <fragment
         android:id="@+id/aboutFragment"
