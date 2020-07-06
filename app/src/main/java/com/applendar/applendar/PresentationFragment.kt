@@ -11,7 +11,7 @@ import com.applendar.applendar.databinding.FragmentTitleBinding
 /**
  * A simple [Fragment] subclass.
  */
-class TitleFragment : Fragment() {
+class PresentationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
