@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.applendar.applendar.adapters.Activity
 import com.applendar.applendar.adapters.AgendaAdapter
 import com.applendar.applendar.databinding.ActivityMainBinding
+import com.jakewharton.threetenabp.AndroidThreeTen
 import kotlinx.android.synthetic.main.fragment_calendar.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AndroidThreeTen.init(this)
 
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>( this,
             R.layout.activity_main)

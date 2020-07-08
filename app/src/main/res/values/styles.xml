@@ -85,4 +85,9 @@
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textSize">10sp</item>
     </style>
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
 </resources>
