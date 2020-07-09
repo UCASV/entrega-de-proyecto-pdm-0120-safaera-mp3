@@ -5,20 +5,24 @@ import com.google.gson.annotations.SerializedName
 
 class Comentario {
 
-    @SerializedName("idComentario")
+    @SerializedName("comentarioId")
     @Expose
-    var idComentario: Int?=null
+    var comentarioId: Int?=null
 
     @SerializedName("comentario")
     @Expose
-    var comentario: Usuario?=null
+    var comentario: String?=null
 
-    @SerializedName("fechaCreacion")
+    @SerializedName("fechaComentario")
     @Expose
-    var fechaCreacion: Usuario?=null
+    var fechaComentario: String?=null
 
-    @SerializedName("autor")
+    @SerializedName("usuario")
     @Expose
-    var autor: Usuario?=null
+    var usuario: Usuario?=null
+
+    @SerializedName("actividad")
+    @Expose
+    var actividad: Actividad?=null
 
 }

@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 class Materia {
 
-    @SerializedName("idMateria")
+    @SerializedName("materiaId")
     @Expose
-    var idMateria: Int?=null
+    var materiaId: Int?=null
 
     @SerializedName("nombre")
     @Expose
@@ -25,7 +25,15 @@ class Materia {
     @Expose
     var acronimo: String?=null
 
-    @SerializedName("siguienteFecha")
+    @SerializedName("ciclo")
     @Expose
-    var siguienteFechaEva: String?=null
+    var ciclo: String?=null
+
+    @SerializedName("fecha_de_finalizacion")
+    @Expose
+    var fechaDeFinalizacion: String?=null
+
+    @SerializedName("actividades")
+    @Expose
+    var actividades: ArrayList<Actividad>?=null
 }

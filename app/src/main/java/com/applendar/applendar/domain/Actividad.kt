@@ -17,23 +17,27 @@ class Actividad {
     @Expose
     var tipoDeActividad: String?=null
 
-    @SerializedName("lugar")
+    /*@SerializedName("lugar")
     @Expose
-    var lugar: String?=null
+    var lugar: String?=null*/
 
-    @SerializedName("fechaDeActividad")
+    @SerializedName("fechaDeEvaluacion")
     @Expose
-    var fechaDeActividad: String?=null
+    var fechaDeEvaluacion: String?=null
 
-    @SerializedName("detalles")
+    /*@SerializedName("detalles")
     @Expose
     var detalles: Usuario?=null
 
     @SerializedName("autor")
     @Expose
-    var autor: Usuario?=null
+    var autor: Usuario?=null*/
 
-    @SerializedName("comentarios")
+    @SerializedName("materia")
     @Expose
-    var comentarios: List<Comentario>?=null
+    var materia: Materia?=null
+
+    /*@SerializedName("comentarios")
+    @Expose
+    var comentarios: List<Comentario>?=null*/
 }
