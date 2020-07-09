@@ -23,39 +23,21 @@ import kotlinx.android.synthetic.main.fragment_calendar.*
 import org.threeten.bp.LocalDate
 import org.threeten.bp.YearMonth
 import org.threeten.bp.format.DateTimeFormatter
-//==
-
-//import android.os.Bundle
-//import android.view.LayoutInflater
-///import android.view.View
-//import android.view.ViewGroup
-//import android.widget.TextView
 import androidx.core.view.children
 import androidx.core.view.isVisible
-//import androidx.fragment.app.Fragment
 import com.applendar.applendar.activities.daysOfWeekFromLocale
 import com.applendar.applendar.activities.makeInVisible
 import com.applendar.applendar.activities.makeVisible
 import com.applendar.applendar.activities.setTextColorRes
-//import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.CalendarMonth
-//import com.kizitonwose.calendarview.model.DayOwner
-//import com.kizitonwose.calendarview.ui.DayBinder
 import com.kizitonwose.calendarview.ui.MonthHeaderFooterBinder
 import com.kizitonwose.calendarview.ui.ViewContainer
 import com.applendar.applendar.databinding.Example3CalendarDayBinding
 import com.applendar.applendar.databinding.Example3CalendarHeaderBinding
 import com.applendar.applendar.databinding.Example3FragmentBinding
-//import org.threeten.bp.LocalDate
-//import org.threeten.bp.YearMonth
-//import org.threeten.bp.format.DateTimeFormatter
 
 data class Event(val id: String, val text: String, val date: LocalDate)
 
-//==
-/**
- * A simple [Fragment] subclass.
- */
 class CalendarFragment : Fragment() {
 
     private var selectedDate: LocalDate? = null
@@ -65,7 +47,6 @@ class CalendarFragment : Fragment() {
     private val titleFormatter = DateTimeFormatter.ofPattern("MMM yyyy")
     private val selectionFormatter = DateTimeFormatter.ofPattern("d MMM yyyy")
     private val events = mutableMapOf<LocalDate, List<Event>>()
-    //private lateinit var binding: Example3FragmentBinding
 
 
     private lateinit var binding: FragmentCalendarBinding
@@ -75,55 +56,43 @@ class CalendarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate<FragmentCalendarBinding>(inflater,
-            R.layout.fragment_calendar, container, false)
-//            R.layout.example_3_fragment, container, false)
+        binding = DataBindingUtil.inflate<FragmentCalendarBinding>(
+            inflater,
+            R.layout.fragment_calendar, container, false
+        )
+        //R.layout.example_3_fragment, container, false)
         //return inflater.inflate(R.layout.fragment_calendar, container, false)
         setHasOptionsMenu(true)
         return binding.root
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-
-        // Add Listener in calendar
-//        binding.calendarView.setOnDateChangeListener{ view, year, month, dayOfMonth ->
-//            val msg = dayOfMonth.toString() +"/"+(month+1)+"/"+year
-//            //Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
-//            binding.textView5.text = msg
-//        }
-
-
-        //============================activitites Rv
+        //============================activitites Recyclerview events of month
         //val recycler: RecyclerView = findViewById(R.id.recycler)
         //recycler.layoutManager = LinearLayoutManager(this,RecyclerView.VERTICAL, false)
         act_recycler.addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
 
         val activities = ArrayList<Activity>()
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
-        activities.add(Activity("Examen","moviles","23/06/2020",R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
+        activities.add(Activity("Examen", "moviles", "23/06/2020", R.drawable.quiz))
 
 
         val adapter = AgendaAdapter(activities)
-
-        act_recycler.adapter=adapter
+        act_recycler.adapter = adapter
 
         //============================activitites Rv
-
-
 
 
         val daysOfWeek = daysOfWeekFromLocale()
@@ -191,7 +160,7 @@ class CalendarFragment : Fragment() {
         }
 
         binding.exThreeCalendar.monthScrollListener = {
-//            homeActivityToolbar.title = if (it.year == today.year) {
+//            homeActivityToolbar.title = if (it.year == today.year) {      //stuff of text on toolbar
 //                titleSameYearFormatter.format(it.yearMonth)
 //            } else {
 //                titleFormatter.format(it.yearMonth)
@@ -231,6 +200,7 @@ class CalendarFragment : Fragment() {
             updateAdapterForDate(date)
         }
     }
+
     //
 //    private fun saveEvent(text: String) {
 //        if (text.isBlank()) {
