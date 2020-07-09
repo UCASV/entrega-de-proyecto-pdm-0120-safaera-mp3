@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 class Actividad {
 
-    @SerializedName("idActividad")
+    @SerializedName("actividadId")
     @Expose
     var idActividad: Int?=null
 
