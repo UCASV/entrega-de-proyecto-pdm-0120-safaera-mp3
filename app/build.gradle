@@ -7,9 +7,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
-    dataBinding {
-        enabled = true
-    }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -25,6 +23,19 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        compileOptions {
+            sourceCompatibility = 1.8
+            targetCompatibility = 1.8
+        }
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    dataBinding {
+        enabled = true
     }
 
     buildTypes {

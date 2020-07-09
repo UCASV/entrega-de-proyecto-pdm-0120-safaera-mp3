@@ -7,58 +7,10 @@
 
     <fragment
         android:id="@+id/titleFragment"
-        android:name="com.applendar.applendar.TitleFragment"
+        android:name="com.applendar.applendar.PresentationFragment"
         android:label="Calendario Universitario"
-        tools:layout="@layout/fragment_title">
-        <action
-            android:id="@+id/action_titleFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_presentation"/>
 
-    <fragment
-        android:id="@+id/gameFragment"
-        android:name="com.applendar.applendar.GameFragment"
-        android:label="fragment_game"
-        tools:layout="@layout/fragment_game" >
-        <action
-            android:id="@+id/action_gameFragment_to_gameWonFragment"
-            app:destination="@id/gameWonFragment"
-            app:popUpTo="@id/gameFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_gameFragment_to_gameOverFragment"
-            app:destination="@id/gameOverFragment"
-            app:popUpTo="@id/gameFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
-        android:id="@+id/gameWonFragment"
-        android:name="com.applendar.applendar.GameWonFragment"
-        android:label="GameWonFragment"
-        tools:layout="@layout/fragment_game_won">
-        <action
-            android:id="@+id/action_gameWonFragment_to_gameFragment"
-            app:destination="@id/gameFragment"
-            app:popUpTo="@id/titleFragment"
-            app:popUpToInclusive="false" />
-        <argument
-            android:name="numQuestions"
-            app:argType="integer" />
-        <argument
-            android:name="numCorrect"
-            app:argType="integer"/>
-    </fragment>
-    <fragment
-        android:id="@+id/gameOverFragment"
-        android:name="com.applendar.applendar.GameOverFragment"
-        android:label="GameOverFragment"
-        tools:layout="@layout/fragment_game_over">
-        <action
-            android:id="@+id/action_gameOverFragment_to_gameFragment"
-            app:destination="@id/gameFragment"
-            app:popUpTo="@id/titleFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.applendar.applendar.AboutFragment"
@@ -68,7 +20,7 @@
         android:id="@+id/rulesFragment"
         android:name="com.applendar.applendar.RulesFragment"
         android:label="Perfil Estudiante"
-        tools:layout="@layout/fragment_rules" />
+        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.applendar.applendar.activities.CalendarFragment"
