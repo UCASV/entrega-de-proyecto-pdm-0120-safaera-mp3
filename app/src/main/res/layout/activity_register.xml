@@ -8,6 +8,19 @@
     android:padding="8dp"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/logo_applendar"
+        android:layout_width="194dp"
+        android:layout_height="198dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/logoapp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -19,39 +32,49 @@
 
     <EditText
         android:id="@+id/et_name"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
         android:hint="Name"
         android:inputType="textPersonName"/>
 
 
     <EditText
         android:id="@+id/et_last_name"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:hint="Last name"
         android:inputType="textPersonName"/>
 
     <EditText
         android:id="@+id/et_email"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="Email"/>
 
     <EditText
         android:id="@+id/et_pass"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/bt_reg"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:text="Button"
         android:onClick="register"/>
 
