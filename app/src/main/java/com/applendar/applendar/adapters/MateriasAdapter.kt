@@ -37,7 +37,7 @@ class MateriasAdapter(private val context: Context, private val materiasList: Ar
         }
         val materia: Materia = materiasList.get(i);
         viewHolder.nombreMateria?.setText(materia.nombre!!);
-        viewHolder.fechaSiguienteEvaluacion?.setText(materia.siguienteFechaEva);
+        //viewHolder.fechaSiguienteEvaluacion?.setText(materia.siguienteFechaEva);
         viewHolder.acronimoMateria?.setText(materia.acronimo);
 
         return mView!!;

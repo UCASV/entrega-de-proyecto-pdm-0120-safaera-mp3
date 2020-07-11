@@ -3,20 +3,32 @@ package com.applendar.applendar
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
+import android.os.AsyncTask
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.view.MenuItemCompat
 import com.applendar.applendar.adapters.MateriasAdapter
 import com.applendar.applendar.domain.Materia
+import com.applendar.applendar.retrofit.APIEndpoint
+import com.applendar.applendar.retrofit.AsyncResponse
+import com.applendar.applendar.util.GeneralGlobalVariables
+
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Call
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.io.IOException
 
 class ListadoMateriasActivity : AppCompatActivity() {
 
@@ -33,7 +45,6 @@ class ListadoMateriasActivity : AppCompatActivity() {
         var materia: Materia = Materia();
         materia.nombre = "Programación de Disp. Mov.";
         materia.acronimo = "PDM";
-        materia.siguienteFechaEva = "28/05/20"
         materia.catedratico = "Lic. Nestor Aldana";
         materia.descripcion = "La materia de programación de dispositivos móviles, como su nombre lo dice, se enfoca en el desarrollo" +
                 " de aplicaciones para dispositivos móviles, más especificamente en desarrollo para el sistema operativo Android."
@@ -41,7 +52,6 @@ class ListadoMateriasActivity : AppCompatActivity() {
         var materia2: Materia = Materia();
         materia2.nombre = "Programación N-Capas";
         materia2.acronimo = "NC";
-        materia2.siguienteFechaEva = "30/05/20"
         materia.catedratico = "Lic. Juan Lozano";
         materia.descripcion = "La materia de programación n-capas se enfoca en el desarrollo de aplicaciones por layers o capas, para la" +
                 " subdibición de labores entres los componentes de una aplicación"
@@ -49,7 +59,6 @@ class ListadoMateriasActivity : AppCompatActivity() {
         var materia3: Materia = Materia();
         materia3.nombre = "Análisis Numérico";
         materia3.acronimo = "AN";
-        materia3.siguienteFechaEva = "10/06/20"
         materia.catedratico = "Ing. Daniel Sosa";
         materia.descripcion = "La materia de análisis numérico tiene como objetivo mostrar al estudiantes los métodos de convergencia "+
                 "de los algoritmos que se utilizan en el día a día."
@@ -57,21 +66,18 @@ class ListadoMateriasActivity : AppCompatActivity() {
         var materia4: Materia = Materia();
         materia4.nombre = "Matemáticas 4";
         materia4.acronimo = "MAT4";
-        materia4.siguienteFechaEva = "07/06/20"
         materia.catedratico = "Ing. Mauro Cortez";
         materia.descripcion = "La materia de matemáticas 4 se enfoca en campos en 3 dimensiones"
         materias.add(materia4);
         var materia5: Materia = Materia();
         materia5.nombre = "Matemáticas 3";
         materia5.acronimo = "MAT3";
-        materia5.siguienteFechaEva = "07/06/20"
         materia.catedratico = "Ing. Daniel Sosa";
         materia.descripcion = "La materia de matemáticas 3 se enfoca en interpolares y campos en 3 dimensiones"
         materias.add(materia5);
         var materia6: Materia = Materia();
         materia6.nombre = "Matemáticas 2";
         materia6.acronimo = "MAT2";
-        materia6.siguienteFechaEva = "07/06/20"
         materia.catedratico = "Ing. Enrique Arguello";
         materia.descripcion = "La materia de matemáticas 2 ve temas como las integrales y solidos de revolución"
         materias.add(materia6);
@@ -87,7 +93,6 @@ class ListadoMateriasActivity : AppCompatActivity() {
             var intent: Intent = Intent(applicationContext, MateriaActivity::class.java)
             intent.putExtra("materia_nombre", materia.nombre)
             intent.putExtra("materia_acronimo", materia.acronimo)
-            intent.putExtra("materia_siguienteFechaEva", materia.siguienteFechaEva)
             intent.putExtra("materia_catedratico", materia.catedratico)
             intent.putExtra("materias_descripcion", materia.descripcion)
             startActivity(intent)
@@ -176,5 +181,47 @@ class ListadoMateriasActivity : AppCompatActivity() {
         } else {
             super.onBackPressed();
         }
+    }
+
+    class ClienteRequest(callback: AsyncResponse) :
+        AsyncTask<String?, Void?, kotlin.collections.ArrayList<Materia>>() {
+        var delegate: AsyncResponse
+
+
+        override fun doInBackground(vararg p0: String?): ArrayList<Materia>? {
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+            val client = OkHttpClient.Builder()
+                .addInterceptor(interceptor).build()
+            val BASE_URL: String = GeneralGlobalVariables.BASE_URL
+            val retrofit = Retrofit.Builder()
+                .client(client)
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            val apiService: APIEndpoint = retrofit.create(APIEndpoint::class.java)
+
+            /*val encoder = Encoder()
+            val usuario = prefs.getString(LoginActivity.USERNAME, null)
+            val password = prefs.getString(LoginActivity.PASSWORD, null)
+            val encodedString: String = encoder.encoder64(usuario, password)*/
+            val request: Call<ArrayList<Materia>> =
+                apiService.getMaterias()
+            val response: Response<ArrayList<Materia>>
+            try {
+                response = request.execute()
+                println("Request for location done")
+                return response.body()
+            } catch (e: IOException) {
+                println(e.message)
+            }
+            return null
+        }
+
+
+        init {
+            delegate = callback
+        }
+
     }
 }
