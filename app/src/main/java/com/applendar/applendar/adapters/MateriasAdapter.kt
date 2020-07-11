@@ -16,7 +16,7 @@ class MateriasAdapter(private val context: Context, private val materiasList: Ar
     class MateriasViewHolder{
         var nombreMateria : TextView?=null;
         var acronimoMateria : TextView?=null;
-        var fechaSiguienteEvaluacion : TextView?=null;
+        var catedratico : TextView?=null;
     }
 
 
@@ -29,7 +29,7 @@ class MateriasAdapter(private val context: Context, private val materiasList: Ar
             mView  = inflater.inflate(R.layout.materia_listview_element, parent, false);
             viewHolder.nombreMateria = mView.findViewById(R.id.materia_listview_element_materia);
             viewHolder.acronimoMateria = mView.findViewById(R.id.materia_listview_element_acronimo);
-            viewHolder.fechaSiguienteEvaluacion = mView.findViewById(R.id.materia_listview_element_fecha_sig_evaluacion);
+            viewHolder.catedratico = mView.findViewById(R.id.materia_listview_element_catedratico);
             mView.setTag(viewHolder);
         }
         else{
@@ -37,7 +37,7 @@ class MateriasAdapter(private val context: Context, private val materiasList: Ar
         }
         val materia: Materia = materiasList.get(i);
         viewHolder.nombreMateria?.setText(materia.nombre!!);
-        //viewHolder.fechaSiguienteEvaluacion?.setText(materia.siguienteFechaEva);
+        viewHolder.catedratico?.setText(materia.catedratico);
         viewHolder.acronimoMateria?.setText(materia.acronimo);
 
         return mView!!;

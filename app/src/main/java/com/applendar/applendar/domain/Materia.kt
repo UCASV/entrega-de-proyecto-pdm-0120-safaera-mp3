@@ -13,9 +13,9 @@ class Materia {
     @Expose
     var nombre: String?=null
 
-    @SerializedName("nombre")
+    /*@SerializedName("nombre")
     @Expose
-    var descripcion: String?=null
+    var descripcion: String?=null*/
 
     @SerializedName("catedratico")
     @Expose
