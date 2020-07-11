@@ -8,6 +8,19 @@
     tools:context=".login.LoginActivity"
     android:padding="8dp">
 
+    <ImageView
+        android:id="@+id/logo_applendar"
+        android:layout_width="194dp"
+        android:layout_height="198dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/logoapp"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <ProgressBar
         android:id="@+id/progressBar_login"
         style="?android:attr/progressBarStyle"
@@ -19,16 +32,20 @@
 
     <EditText
         android:id="@+id/et_user"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/et_pass"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
@@ -36,14 +53,18 @@
     <Button
         android:id="@+id/bt_login"
         android:onClick="login"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:text="Send" />
 
     <TextView
         android:id="@+id/textView"
         android:onClick="forgotPassword"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:text="I forgot my password." />
 </LinearLayout>
