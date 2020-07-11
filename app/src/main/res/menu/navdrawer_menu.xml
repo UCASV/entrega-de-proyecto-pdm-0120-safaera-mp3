@@ -16,11 +16,11 @@
         android:title="Materias" />
 
     <item
-        android:id="@+id/Web"
+        android:id="@+id/webViewFragment"
         android:icon="@drawable/ic_http_24px"
         android:title="Website" />
     <item
-        android:id="@+id/LogOut"
+        android:id="@+id/loginFragment"
         android:icon="@drawable/ic_exit_24px"
         android:title="Salir" />
 </menu>
