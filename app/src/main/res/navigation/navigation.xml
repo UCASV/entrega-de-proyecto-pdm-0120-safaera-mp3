@@ -27,8 +27,20 @@
         android:label="Actividades del Mes"
         tools:layout="@layout/fragment_calendar" />
     <fragment
+
+        android:id="@+id/loginFragment"
+        android:name="com.applendar.applendar.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.applendar.applendar.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
+<fragment
         android:id="@+id/listadoMateriasFragment"
         android:name="com.applendar.applendar.ListadoMateriasFragment"
         android:label="fragment_listado_materias"
         tools:layout="@layout/fragment_listado_materias" />
+
 </navigation>
