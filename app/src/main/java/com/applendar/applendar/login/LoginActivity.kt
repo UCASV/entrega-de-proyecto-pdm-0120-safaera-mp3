@@ -48,29 +48,29 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun login(view: View){
-        loginUser()
+//        loginUser()
         startActivity(Intent(this, MainActivity::class.java))  //borrar
     }
     private fun loginUser(){
         val user:String= etUser.text.toString()
         val password:String = etPass.text.toString()
 
-        if(!TextUtils.isEmpty(user)&& !TextUtils.isEmpty(password)){
+//        if(!TextUtils.isEmpty(user)&& !TextUtils.isEmpty(password)){
 //            progressBar.visibility=View.VISIBLE
 //            auth.signInWithEmailAndPassword(user,password)
 //                .addOnCompleteListener(this){
 //                    task ->
 //                    if(task.isSuccessful){
-//                        action()
+     //                   action()
 //                    }else{
 //                        Toast.makeText(this, "Error en la autenticacion", Toast.LENGTH_LONG).show()
 //                    }
 //                }
-        }
+//        }
     }
     
     private fun action(){
-        //startActivity(Intent(this, MainActivity::class.java))
+    //    startActivity(Intent(this, MainActivity::class.java))
 
     }
 }

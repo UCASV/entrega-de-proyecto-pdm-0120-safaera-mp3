@@ -14,8 +14,8 @@ import kotlinx.android.synthetic.main.activity_presentation.*
 
 class Presentation : AppCompatActivity() {
 
-    //private lateinit var btLogin: Button
-    //private lateinit var btReg: Button
+    private lateinit var btLogin: Button
+    private lateinit var btReg: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +27,10 @@ class Presentation : AppCompatActivity() {
     }
 
     private fun bindView(){
-       // btLogin=findViewById(R.id.bt_login)
+        //btLogin=findViewById(R.id.bt_login)
         //btReg=findViewById(R.id.bt_reg)
 
-        bt_login.setOnClickListener(){
+        bt_pre_login.setOnClickListener(){
             startActivity(Intent(this,LoginActivity::class.java))
         }
         bt_reg.setOnClickListener(){
