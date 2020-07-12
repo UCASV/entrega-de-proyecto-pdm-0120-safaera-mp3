@@ -9,7 +9,7 @@ import android.view.ViewGroup
 /**
  * A simple [Fragment] subclass.
  */
-class RulesFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
