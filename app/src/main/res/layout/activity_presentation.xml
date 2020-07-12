@@ -2,6 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -9,15 +11,34 @@
         android:orientation="vertical"
         android:padding="8dp">
 
+        <ImageView
+            android:id="@+id/logo_applendar"
+            android:layout_width="194dp"
+            android:layout_height="198dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/logoapp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
         <Button
-            android:id="@+id/bt_pre_login"
-            android:layout_width="match_parent"
+
+            android:id="@+id/bt_login"
+            android:layout_width="300dp"
+
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
             android:text="Log in"/>
         <Button
             android:id="@+id/bt_reg"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
             android:text="Register"/>
 
     </LinearLayout>

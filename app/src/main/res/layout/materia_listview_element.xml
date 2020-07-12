@@ -49,14 +49,14 @@
             android:paddingRight="16dp"
             android:layout_weight="10"
             android:gravity="center"
-            android:text="Siguiente fecha de evaluación:"/>
+            android:text="Catedrático:"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="00/00/00"
             android:layout_weight="8"
             android:gravity="center"
-            android:id="@+id/materia_listview_element_fecha_sig_evaluacion"
+            android:id="@+id/materia_listview_element_catedratico"
             />
 
     </LinearLayout>
