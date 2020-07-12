@@ -30,7 +30,7 @@ class Presentation : AppCompatActivity() {
         //btLogin=findViewById(R.id.bt_login)
         //btReg=findViewById(R.id.bt_reg)
 
-        bt_pre_login.setOnClickListener(){
+        bt_login.setOnClickListener(){
             startActivity(Intent(this,LoginActivity::class.java))
         }
         bt_reg.setOnClickListener(){
