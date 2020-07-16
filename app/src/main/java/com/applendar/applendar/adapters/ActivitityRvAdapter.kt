@@ -8,27 +8,29 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.applendar.applendar.R
+import com.applendar.applendar.domain.Actividad
+import com.applendar.applendar.domain.Materia
 import com.bumptech.glide.Glide
 
-class Activity(var name:String, var materia:String, var date:String, var thumbnail:Int)
+//class Activity(var name:String, var materia:String, var date:String, var thumbnail:Int)
 
-class AgendaAdapter(var list: ArrayList<Activity>):RecyclerView.Adapter<AgendaAdapter.ViewHolder>(){
+class AgendaAdapter(var list: ArrayList<Actividad>):RecyclerView.Adapter<AgendaAdapter.ViewHolder>(){
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
-        fun bindItems(data:Activity){
+        fun bindItems(data:Actividad){
             val title:TextView = itemView.findViewById(R.id.name)
             val materiaStr:TextView = itemView.findViewById(R.id.materia)
             val date:TextView = itemView.findViewById(R.id.date)
-            val thumbnail:ImageView = itemView.findViewById(R.id.thumbnail)
+            //val thumbnail:ImageView = itemView.findViewById(R.id.thumbnail)
 
-            title.text = data.name
-            materiaStr.text = data.materia
-            date.text = data.date
+            title.text = data.nombre
+//            materiaStr.text = data.materia?.nombre
+//            date.text = data.fechaDeEvaluacion
 
-            Glide.with(itemView.context).load(data.thumbnail).into(thumbnail)
+            //Glide.with(itemView.context).load(data.thumbnail).into(thumbnail)
 
-            itemView.setOnClickListener{
-                Toast.makeText(itemView.context,"Album de ${data.name}",Toast.LENGTH_LONG)
-            }
+//            itemView.setOnClickListener{
+//                Toast.makeText(itemView.context,"Album de ${data.name}",Toast.LENGTH_LONG)
+//            }
         }
     }
 

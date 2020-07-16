@@ -57,25 +57,5 @@
             app:layout_constraintStart_toStartOf="@+id/materia"
             app:layout_constraintTop_toBottomOf="@+id/materia" />
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-
-        android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
-
-    <!--    <view-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="1dp"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:background="@android:color/darker_gray"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/date" />-->
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
