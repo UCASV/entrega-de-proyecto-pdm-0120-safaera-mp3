@@ -1,0 +1,4 @@
+[submodule "moviles-sharemy10-ws"]
+	path = moviles-sharemy10-ws
+	url = https://github.com/EdwinM96/moviles-sharemy10-ws.git
+	branch = master
