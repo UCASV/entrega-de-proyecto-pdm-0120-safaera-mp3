@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Perfil.PerfilUser">
 
-    <ImageView
-        android:id="@+id/fondoP"
-        android:layout_width="424dp"
-        android:layout_height="312dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
@@ -26,7 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:src="@drawable/profile"/>
 
 
     <TextView
